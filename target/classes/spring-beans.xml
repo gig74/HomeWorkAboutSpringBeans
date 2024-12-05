@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="testPrototypeBeanXml" class="com.example.springboot.otherclass.TestPrototypeBeanXml" scope="prototype">
+    </bean>
+    <bean id="testBeanXml" class="com.example.springboot.otherclass.TestBeanXml" scope="singleton">
+        <constructor-arg ref="testPrototypeBeanXml"/>
+    </bean>
+    <bean id="testSecondBeanXml" class="com.example.springboot.otherclass.TestSecondBeanXml" scope="singleton">
+        <constructor-arg ref="testPrototypeBeanXml"/>
+    </bean>
+    <bean id="secondObjecTestBeanXml" class="com.example.springboot.otherclass.TestBeanXml" scope="singleton">
+        <constructor-arg ref="testPrototypeBeanXml"/>
+    </bean>
+</beans>
