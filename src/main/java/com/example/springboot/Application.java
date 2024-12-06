@@ -19,6 +19,7 @@ public class Application {
         System.out.println("---------------JAVA---------------");
         // Запуск beans, описанных в файле Java контекста
         ApplicationContext applicationContextJava = new AnnotationConfigApplicationContext(SpringBeans.class);
+        // Взятие созданных объектов и вызов их методов
         TestBean testBeanJava = (TestBean) applicationContextJava.getBean("testBeanJava");
         System.out.println("testBeanJava.getMessage() : " + testBeanJava.getMessage());
         TestSecondBean testSecondBeanJava = (TestSecondBean) applicationContextJava.getBean("testSecondBeanJava");
