@@ -1,20 +1,20 @@
 beans {
 
-    testPrototypeBeanGroovy(com.example.springboot.otherclass.TestPrototypeBeanGroovy) {
+    testPrototypeBeanGroovy(com.example.springboot.otherclass.TestPrototypeBean,"Groovy") {
         bean ->
             bean.scope = "prototype"
     }
-    testBeanGroovy(com.example.springboot.otherclass.TestBeanGroovy, testPrototypeBeanGroovy) {
+    testBeanGroovy(com.example.springboot.otherclass.TestBean, testPrototypeBeanGroovy) {
         bean ->
             bean.scope = "singleton"
     }
 
-    testSecondBeanGroovy(com.example.springboot.otherclass.TestSecondBeanGroovy, testPrototypeBeanGroovy) {
+    testSecondBeanGroovy(com.example.springboot.otherclass.TestSecondBean, testPrototypeBeanGroovy) {
         bean ->
             bean.scope = "singleton"
     }
 
-    secondObjecTestBeanGroovy(com.example.springboot.otherclass.TestBeanGroovy, testPrototypeBeanGroovy) {
+    secondObjecTestBeanGroovy(com.example.springboot.otherclass.TestBean, testPrototypeBeanGroovy) {
         bean ->
             bean.scope = "singleton"
     }

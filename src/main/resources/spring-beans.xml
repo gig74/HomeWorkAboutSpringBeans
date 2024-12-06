@@ -3,15 +3,16 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="testPrototypeBeanXml" class="com.example.springboot.otherclass.TestPrototypeBeanXml" scope="prototype">
+    <bean id="testPrototypeBeanXml" class="com.example.springboot.otherclass.TestPrototypeBean" scope="prototype">
+        <constructor-arg value="Xml"/>
     </bean>
-    <bean id="testBeanXml" class="com.example.springboot.otherclass.TestBeanXml" scope="singleton">
+    <bean id="testBeanXml" class="com.example.springboot.otherclass.TestBean" scope="singleton">
         <constructor-arg ref="testPrototypeBeanXml"/>
     </bean>
-    <bean id="testSecondBeanXml" class="com.example.springboot.otherclass.TestSecondBeanXml" scope="singleton">
+    <bean id="testSecondBeanXml" class="com.example.springboot.otherclass.TestSecondBean" scope="singleton">
         <constructor-arg ref="testPrototypeBeanXml"/>
     </bean>
-    <bean id="secondObjecTestBeanXml" class="com.example.springboot.otherclass.TestBeanXml" scope="singleton">
+    <bean id="secondObjecTestBeanXml" class="com.example.springboot.otherclass.TestBean" scope="singleton">
         <constructor-arg ref="testPrototypeBeanXml"/>
     </bean>
 </beans>
